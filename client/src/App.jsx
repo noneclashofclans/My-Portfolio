@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-
+import { TomJerryLoader, TJ_DARK_CSS } from "./TomJerryLoader";
 const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
 
 const SKILLS = [
@@ -320,6 +320,13 @@ function VoxelWorkspace() {
     }, 1500);
   }, []);
 
+  useEffect(() => {
+  const style = document.createElement("style");
+  style.textContent = TJ_DARK_CSS;
+  document.head.appendChild(style);
+  return () => document.head.removeChild(style);
+}, []);
+
   return (
     <div className="voxel-scene-wrapper">
       <div className="desk-scene">
@@ -613,7 +620,7 @@ function HeroSection() {
 }
 
 function SkillsSection() {
-  const [ref, inView] = useInView(0.2);
+  const [ref, inView] = useInView(0.1);
   return (
     <section className="section" id="skills" ref={ref}>
       <div className="jp-section-deco" aria-hidden="true">
@@ -1028,7 +1035,7 @@ export default function App() {
     }
   }, [loading]);
 
-  if (loading) return <AnimeLoader onDone={() => setLoading(false)} />;
+  if (loading) return <TomJerryLoader onDone={() => setLoading(false)} />;
 
   return (
     <div className="app-root">
