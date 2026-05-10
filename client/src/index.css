@@ -140,9 +140,7 @@ body {
     transform: scaleX(-1) translateY(-12px);
   }
 }
-.house-deco--r { @keyframes houseFloat { 0% { transform: scaleX(-1) translateY(0); } 100% { transform: scaleX(-1) translateY(-12px); } } }
 
-/* Torii gate in hero */
 .jp-scene-hero {
   position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
 }
