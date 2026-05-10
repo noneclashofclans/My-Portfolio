@@ -123,8 +123,23 @@ body {
 
 .house-deco { position: absolute; opacity: 0.12; }
 .house-deco--l { left: -30px; top: 40px; width: 180px; animation: houseFloat 10s ease-in-out infinite alternate; }
-.house-deco--r { right: -30px; top: 60px; width: 180px; transform: scaleX(-1); animation: houseFloat 12s ease-in-out infinite alternate; }
-@keyframes houseFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-12px); } }
+.house-deco--r {
+  right: -30px;
+  top: 60px;
+  width: 180px;
+  transform: scaleX(-1);
+  animation: houseFloatR 12s ease-in-out infinite alternate;
+}
+
+@keyframes houseFloatR {
+  0% {
+    transform: scaleX(-1) translateY(0);
+  }
+
+  100% {
+    transform: scaleX(-1) translateY(-12px);
+  }
+}
 .house-deco--r { @keyframes houseFloat { 0% { transform: scaleX(-1) translateY(0); } 100% { transform: scaleX(-1) translateY(-12px); } } }
 
 /* Torii gate in hero */
